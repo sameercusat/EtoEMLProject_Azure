@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../static/css/style.css">
+    <title>Document</title>
+</head>
+<body>
+    <div class="outer-box">
+        <div class="inner-box">
+            <header class="predict-header">
+            <h1>Math Score Predictor</h1>
+            <p>Predict Your Math Score</p>
+            </header>
+            <main class="predict-body">
+               <form action="{{url_for('predict_math_score')}}" method="post">
+                 <p>
+                    <label for="gender">Gender</label>
+                    <select name="gender" id="gender",v>
+                     <option value="male">Male</option>
+                     <option value="female">Female</option>
+                    </select>
+               </p>
+                <p>
+                    <label for="race">Race</label>
+                    <select name="race" id="race">
+                     <option value="group A">Group A</option>
+                     <option value="group B">Group B</option>
+                     <option value="group C">Group C</option>
+                     <option value="group D">Group D</option>
+                     <option value="group E">Group E</option>
+                    </select>
+               </p>
+                <p>
+                    <label for="education">Parent's Education</label>
+                    <select name="education" id="education">
+                     <option value="bachelor's degree">Bachelor</option>
+                     <option value="some college">College</option>
+                     <option value="master's degree">Master</option>
+                     <option value="associate's degree">Associate</option>
+                     <option value="high school">High School</option>
+                     <option value="some high school"> Some High School</option>
+                    </select>
+                </p>
+                <p>
+                    <label for="lunch">Lunch Scheme Opted</label>
+                    <select name="lunch" id="lunch">
+                        <option value="standard">Standard</option>
+                        <option value="free/reduced">Free or Reduced</option>
+                    </select>
+                </p>
+                <p>
+                    <label for="course">Test Prepration Course</label>
+                    <select name="course" id="course">
+                      <option value="completed">Yes</option>
+                      <option value="none">No</option>
+                    </select>
+                </p>
+                <p>
+                    <label for="rscore">Reading Score</label>
+                    <input type="text" name="rscore" id="rscore">
+                </p>
+                <p>
+                    <label for="wscore">Writing Score</label>
+                    <input type="text" name="wscore" id="wscore">
+                </p>
+                <p>
+                    <input type="submit" value="Predict Score">
+                </p>
+               </form>
+               {% if result%}
+               <b>Predicted Math's Score is {{result}}</b>
+               {%endif%}
+            </main>
+        </div>
+    </div>
+</body>
+</html>

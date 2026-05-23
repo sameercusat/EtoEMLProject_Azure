@@ -1,0 +1,9 @@
+pandas
+numpy==2.4.4
+# seaborn
+scikit-learn
+# catboost
+# xgboost
+dill
+flask
+# -e .
